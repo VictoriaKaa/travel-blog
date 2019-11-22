@@ -1,0 +1,462 @@
+$main-font: 'Raleway', sans-serif;
+$title-font: 'Raleway', sans-serif;
+$main-color: #ad7835;
+$add-color: #ffffff;
+$shadow-color: #373737;
+
+*{
+    box-sizing: border-box; /* паддинг и бордер будут считаться "внутри" */
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../img/Warstwa3.png);
+    background-position: center;
+    min-height: 5000px;
+    background-repeat: no-repeat;
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto; /* центрирование */
+}
+
+.header{
+    &__top{
+        width: 100%;
+        height: 700px;
+        margin-top: 100px;
+    }
+    &__text{
+        position: relative;
+        width: 60%;
+        height: 56%;
+        border-top: 10px solid $main-color;
+        border-left: 10px solid $main-color;
+        margin: 0 auto; /* центрирование */
+        &-top{
+            position: relative;
+            font-family: $main-font;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: bold;
+            color: $add-color;
+            text-align: center;
+            margin-top: 60px;
+        }
+        &-top::after{
+            position: absolute;
+            content: "";
+            width: 72px;
+            height: 2px;
+            background-color: $add-color;
+            top: 29px;
+            left: 346px;
+        }
+        &-travel{
+            font-family: $title-font;
+            font-size: 150px;
+            color: $add-color;
+            text-align: center; 
+        }
+        &-description{
+            font-family: $main-font;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: bold;
+            color: $main-color;
+            text-align: center;
+        }
+    }
+    &__text::after{
+        content: "";
+        position: absolute;
+        background-color: $main-color;
+        height: 80%;
+        width: 10px;
+        top: -10px;
+        left: calc(100% - 10px);
+    }
+    /* нижняя */
+    &__text::before{
+        content: "";
+        position: absolute;
+        background-color: $main-color;
+        height: 10px;
+        width: 41%;
+        top: calc(100% - 10px);
+    }
+}
+
+
+.about{
+    &__inner{
+        display: flex;
+        width: 100%;
+        height: 560px;
+        background-color: $shadow-color;
+        position: relative;
+    }
+    &__text-box{
+        width: 50%;
+        padding: 60px;
+    }
+    &__title{
+        position: relative;
+        font-family: $title-font;
+        font-size: 60px;
+        color: $main-color;
+        padding-bottom: 50px;
+    }
+    &__title::after{
+        content: "";
+        position: absolute;
+        width: 95px;
+        height: 3px;
+        left: -1px;
+        top: 75px;
+        background-color: $main-color;
+    }
+
+    &__text{
+        font-family: $main-font;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 25px;
+        font-weight: normal;
+        color: $add-color;
+        padding-bottom: 50px;
+        text-align: left;
+    }
+    &__img{
+        position: absolute;
+        left: 50%;
+        top: -105px;
+        width: 590px;
+        height: 700px;
+        background-image: url(../img/about-me.png);
+    }
+}
+
+.btn-pilum{
+    width: 180px;
+    height: 55px;
+    border: 1px solid #6b4922;
+    background: transparent;
+    color: $main-color;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    &:hover{
+        background: #6b4922;
+        color: $add-color;
+        cursor: pointer;
+    }
+}
+
+.articles{
+    padding-top: 280px;
+    padding-bottom: 280px;
+    .title{
+        position: relative;
+        font-family: $title-font;
+        font-size: 60px;
+        color: $main-color;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+    .title::before{
+        content: "";
+        position: absolute;
+        width: 95px;
+        height: 3px;
+        top: 75px;
+        background-color: $main-color;
+    }
+    &__inner{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.article{
+    width: 400px;
+    height: 580px;
+    padding: 10px;
+    position: relative;
+    &__img{
+        position: relative;
+        top: 0px;
+        left: -28px;
+        background: url(../img/article1.png);
+        width: 480px;
+        height: 378px; 
+        // box-shadow: -30px -30px 0px 0px $shadow-color;
+    }
+    &__img::before{
+        position: absolute;
+        content: "";
+        width: 340px;
+        height: 240px;
+        top: 35px;
+        left: 30px;
+        z-index: -10;
+        background-color: $shadow-color;
+    }
+    &__title{
+        position: relative;
+        font-family: $main-font;
+        font-size: 20px;
+        color: $main-color;
+        padding-bottom: 40px;
+    }
+    &__title::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        top: 38px;
+        background-color: $main-color;
+    }
+    &__text{
+        font-family: $main-font;
+        color: $add-color;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 25px;
+        font-weight: normal;
+        color: $add-color;
+        text-align: justify;
+        padding-bottom: 30px;
+    }
+    &__more{
+    color: $main-color;
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    &:hover{
+        color: $add-color;
+        cursor: pointer;
+        }
+    }
+    .one &__img {
+        background: url(../img/article1.png)
+    }
+    .two &__img{
+        background: url(../img/article2.png);
+        margin-top: 90px;
+    }
+    .two{
+        padding-top: 90px;
+    }
+    .three &__img{
+        background: url(../img/article3.png)
+    }
+}
+
+.gallery{
+    &__title{
+        position: relative;
+        font-family: $title-font;
+        font-size: 60px;
+        color: $main-color;
+        padding-bottom: 50px;
+        margin-left: 85px;
+    }
+    &__title::before{
+        content: "";
+        position: absolute;
+        width: 95px;
+        height: 3px;
+        top: 75px;
+        background-color: $main-color;
+    }
+    &__button{
+        margin-top: 90px;
+        text-align: center;
+    }
+    &__inner{ 
+    display: grid;
+    grid-template-areas:
+        ". . photo2 . ."
+        ". photo1 photo2 photo3 ."
+        ". photo1 photo5 photo5 photo5"
+        "photo4 photo4 photo5 photo5 photo5"
+        "photo4 photo4 photo6 photo7 ."
+        ". . photo6 . .";
+    grid-template-rows: 0.2fr 0.8fr 0.2fr 0.8fr 0.8fr 0.2fr;
+    grid-template-columns: 5% 30% 30% 30% 5%;
+    grid-gap: 20px;
+    // align-items: end;
+    .photo1{
+        grid-area: photo1;
+        background: url(../img/photo1.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        // justify-self: end;
+    }
+    .photo2{
+        grid-area: photo2;
+        background: url(../img/photo2.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .photo3{
+        margin-top: 50px;
+        grid-area: photo3;
+        // align-self: end;
+        background: url(../img/photo3.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .photo4{
+        margin-left: 20px;
+        grid-area: photo4;
+        background: url(../img/photo4.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .photo5{
+        margin: 10px 0;
+        grid-area: photo5;
+        background: url(../img/photo5.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .photo6{
+        width: 370px;
+        height: 350px;
+        grid-area: photo6;
+        background: url(../img/photo6.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .photo7{
+        grid-area: photo7;
+        background: url(../img/photo7.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+}
+}
+
+
+
+
+.contact{
+    margin-top: 240px;
+    &__inner{
+        display: flex;
+        width: 100%;
+        height: 560px;
+        background-color: $shadow-color;
+        position: relative;
+    }
+    &__text-box{
+        position: absolute;
+        left: 50%;
+        width: 50%;
+        padding: 60px;
+    }
+    &__title{
+        position: relative;
+        font-family: $title-font;
+        font-size: 60px;
+        color: $main-color;
+        padding-bottom: 50px;
+    }
+    &__title::after{
+        content: "";
+        position: absolute;
+        width: 95px;
+        height: 3px;
+        left: -1px;
+        top: 75px;
+        background-color: $main-color;
+    }
+    &__img{
+        position: absolute;
+        top: -105px;
+        width: 590px;
+        height: 700px;
+        background-image: url(../img/contact.png);
+    }
+    &__name, &__email, &__message{
+        width: 45%;
+        height: 45px;
+        background-color: $shadow-color;
+        border: none;
+        border-bottom: 1px solid #737373;
+        color: $add-color;
+        padding: 10px;
+        &:focus{
+            outline: 1px solid #737373;
+            border: none;
+        }
+    }
+    &__name{
+        margin-right: 8%;
+    }
+    ::placeholder{
+        color: $add-color;
+        font-family: $main-font;
+    }
+    &__message{
+        margin: 40px 0px;
+        width: 100%;
+        height: 90px;
+        resize: none;
+    }
+    .btn-pilum{
+        margin-top: 30px;
+    }
+}
+
+footer{
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    .container{
+        height: 100%;
+    }
+    .logos{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo{
+        position: relative;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #6b4922;
+        margin-right: 30px;
+        cursor: pointer;
+        &:hover{
+            background-color: #6b4922;
+            &::before{
+            color: $add-color;
+            }
+        }
+    }
+    .logo::before{
+        position: absolute;
+        font-family: 'icomoon';
+        content: "\f099";
+        color: $main-color;
+        font-size: 40px;
+        left: 23px;
+        top: 19px;
+    }
+    .facebook::before{     
+        content: "\f09a";
+    }
+    .instagram::before{     
+        content: "\f16d";
+    }
+    .pinterest::before{     
+        content: "\f231";
+    }
+}
